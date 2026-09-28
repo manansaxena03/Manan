@@ -30,6 +30,11 @@ app.use('/api/budgets', require('./routes/budgetRoutes'));
 app.use('/api/goals', require('./routes/goalRoutes'));
 app.use('/api/dashboard', require('./routes/dashboardRoutes'));
 
+// Root route
+app.get('/', (req, res) => {
+    res.send('SpendWise Backend API is running!');
+});
+
 // Health check route
 app.get('/health', (req, res) => {
     res.status(200).json({ status: 'OK', message: 'API is running' });
